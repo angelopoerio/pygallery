@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div style="align: center;">
+	<img src="/{{picture.image.url}}"></img><br>
+	<p>{{picture.notes}}</p></br>
+	<a href="/delete/{{picture.id}}" class="btn btn-primary" role="button">Delete</a>
+</div>
+{% endblock %}

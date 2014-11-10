@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+   		{% for picture in pictures|slice:":3" %}
+		<div class="col-sm-6 col-md-4">
+    			<div class="thumbnail">
+      				<img src="{{picture.image.url}}">
+      				<div class="caption">
+        <p><a href="/detail/{{picture.id}}" class="btn btn-primary" role="button">Detail</a></p>
+      				</div>
+    			</div>
+  		</div>
+		{% endfor %}
+</div>
+
+<div class="row">
+		{% for picture in pictures|slice:"3:6" %}
+		<div class="col-sm-6 col-md-4">
+    			<div class="thumbnail">
+      				<img src="{{picture.image.url}}">
+      				<div class="caption">
+        <p><a href="/detail/{{picture.id}}" class="btn btn-primary" role="button">Detail</a></p>
+      				</div>
+    			</div>
+  		</div>
+		{% endfor %}
+</div>
+
+<div class="row">
+		{% for picture in pictures|slice:"6:9" %}
+		<div class="col-sm-6 col-md-4">
+    			<div class="thumbnail">
+      				<img src="{{picture.image.url}}">
+      				<div class="caption">
+        <p><a href="/detail/{{picture.id}}" class="btn btn-primary" role="button">Detail</a></p>
+      				</div>
+    			</div>
+  		</div>
+		{% endfor %}
+</div>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if pictures.has_previous %}
+            <a href="?page={{ pictures.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ pictures.number }} of {{ pictures.paginator.num_pages }}.
+        </span>
+
+        {% if pictures.has_next %}
+            <a href="?page={{ pictures.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
