@@ -60,8 +60,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'pygallery',
 	'HOST': '127.0.0.1',
-	'USER': 'test',
-	'PASSWORD': 'test',
+	'USER': 'root',
+	'PASSWORD': 'intermundia',
     }
 }
 
