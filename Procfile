@@ -1,1 +1,1 @@
-web: gunicorn pygallery.pygallery.wsgi --log-file -
+web: cd pygallery; gunicorn pygallery.wsgi --log-file -
